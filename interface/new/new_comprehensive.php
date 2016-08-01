@@ -511,11 +511,12 @@ $fres = getLayoutRes();
                     $insurance_info[2] = getInsuranceData($pid,"secondary");
                     $insurance_info[3] = getInsuranceData($pid,"tertiary");
 
-                    // devops Work Going On Kindly Wait
-                    "onclick='return divclick(this,\"div_ins\");'";
+                    echo "<br /><span class='bold'><input type='checkbox' name='form_cb_ins' value='1' " .
+                        "onclick='return divclick(this,\"div_ins\");'";
                     if ($display_style == 'block') echo " checked";
-//devops next line
+                    echo " /><b>" . xl('Insurance') . "</b></span>\n";
                     echo "<div id='div_ins' class='section' style='display:$display_style;'>\n";
+
                     for($i=1;$i<=3;$i++) {
                         $result3 = $insurance_info[$i];
                         ?>
@@ -712,7 +713,6 @@ $fres = getLayoutRes();
 
                         </table>
                         <hr />
-
                         <?php
                     }
                     echo "</div>\n";
