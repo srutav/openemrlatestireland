@@ -511,13 +511,12 @@ if (! $GLOBALS['simplified_demographics']) {
   $insurance_info[2] = getInsuranceData($pid,"secondary");
   $insurance_info[3] = getInsuranceData($pid,"tertiary");
 
-  echo "<br /><span class='bold'><input type='checkbox' name='form_cb_ins' value='1' " .
-    "onclick='return divclick(this,\"div_ins\");'";
-  if ($display_style == 'block') echo " checked";
-  echo " /><b>" . xl('Insurance') . "</b></span>\n";
-  echo "<div id='div_ins' class='section' style='display:$display_style;'>\n";
-
-  for($i=1;$i<=3;$i++) {
+ // devops Work Going On Kindly Wait
+"onclick='return divclick(this,\"div_ins\");'";
+if ($display_style == 'block') echo " checked";
+//devops next line
+echo "<div id='div_ins' class='section' style='display:$display_style;'>\n";
+ for($i=1;$i<=3;$i++) {
    $result3 = $insurance_info[$i];
 ?>
 <table border="0">
@@ -674,7 +673,7 @@ if (! $GLOBALS['simplified_demographics']) {
    <?php
     // Modified 6/2009 by BM to use list_options and function
     generate_form_field(array('data_type'=>1,'field_id'=>('i'.$i.'subscriber_sex'),'list_id'=>'sex'), $result3['subscriber_sex']);
-   ?>	
+   ?>
    <br>
    <span class=required><?php xl('Subscriber Address','e'); ?>: </span>
    <input type=entry size=25 name=i<?php echo $i?>subscriber_street
@@ -689,7 +688,7 @@ if (! $GLOBALS['simplified_demographics']) {
     // Modified 7/2009 by BM to incorporate data types
     generate_form_field(array('data_type'=>$GLOBALS['state_data_type'],'field_id'=>('i'.$i.'subscriber_state'),'list_id'=>$GLOBALS['state_list'],'fld_length'=>'15','max_length'=>'63','edit_options'=>'C'), $result3['subscriber_state']);
    ?>
-   <br />	
+   <br />
    <span class=required><?php echo ($GLOBALS['phone_country_code'] == '1') ? xl('Zip Code','e') : xl('Postal Code','e') ?>: </span><input type=entry size=10 name=i<?php echo $i?>subscriber_postal_code value="<?php echo $result3{"subscriber_postal_code"}?>">
    <span class='required'<?php if ($GLOBALS['omit_employers']) echo " style='display:none'"; ?>>
    <?php xl('Country','e'); ?>: </span>
@@ -698,7 +697,7 @@ if (! $GLOBALS['simplified_demographics']) {
     generate_form_field(array('data_type'=>$GLOBALS['country_data_type'],'field_id'=>('i'.$i.'subscriber_country'),'list_id'=>$GLOBALS['country_list'],'fld_length'=>'10','max_length'=>'63','edit_options'=>'C'), $result3['subscriber_country']);
    ?>
    <br />
-   <span class=bold><?php xl('Subscriber Phone','e'); ?>: 
+   <span class=bold><?php xl('Subscriber Phone','e'); ?>:
    <input type='text' size='20' name='i<?php echo $i?>subscriber_phone' value='<?php echo $result3["subscriber_phone"] ?>' onkeyup='phonekeyup(this,mypcc)' />
    </span><br />
    <span class=bold><?php xl('CoPay','e'); ?>: <input type=text size="6" name=i<?php echo $i?>copay value="<?php echo $result3{"copay"}?>">
@@ -713,6 +712,7 @@ if (! $GLOBALS['simplified_demographics']) {
 
 </table>
 <hr />
+
 <?php
   }
   echo "</div>\n";
