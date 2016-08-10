@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="OpenEMR">
+<parameter name="url" value="http://firsttest.x6k26cjtd6.us-west-2.elasticbeanstalk.com/interface/login/login_frame.php?site=default"></parameter>
+
+  <test name="DemoTests">
+  
+  <classes>
+  <class name="setup.LaunchBrowser"></class>
+  <class name="tests.Test1"></class>
+  </classes>
+  
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
