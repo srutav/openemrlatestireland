@@ -101,22 +101,22 @@ public class StepRunner {
 				 WebElement fancyFrame=driver.findElement(By.xpath("//div[@id='fancy_outer']//iframe[@id='fancy_frame']"));
 				 driver.switchTo().frame(fancyFrame);
 				 System.out.println("Frame Switched");
-				driver.findElement(By.xpath("//form//table//input[@name='form_name']")).sendKeys("ABC Insurance");
+				driver.findElement(By.xpath("//form//table//input[@name='form_name']")).sendKeys("Life Insurance Corporation of India");
 				
 					
 					
-				driver.findElement(By.xpath("//form//table//input[@name='form_city']")).sendKeys("Kentucky");
-				driver.findElement(By.xpath("//form//table//input[@name='form_attn']")).sendKeys("ABC");
+				driver.findElement(By.xpath("//form//table//input[@name='form_city']")).sendKeys("Bangalore");
+				driver.findElement(By.xpath("//form//table//input[@name='form_attn']")).sendKeys("LIC");
 				driver.findElement(By.xpath("//form//table//input[@name='form_addr1']")).sendKeys("99th Street");
 				driver.findElement(By.xpath("//form//table//input[@name='form_addr2']")).sendKeys("Straight Road");
-				driver.findElement(By.xpath("//form//table//input[@name='form_state']")).sendKeys("UK");
+				driver.findElement(By.xpath("//form//table//input[@name='form_state']")).sendKeys("India");
 				
 				driver.findElement(By.xpath("//form//table//input[@name='form_zip']")).sendKeys("40503");
 				driver.findElement(By.xpath("//form//input[@name='form_save']")).click();
 				System.out.println("ABC Insurance is added");
 				driver.switchTo().defaultContent();
 				driver.switchTo().frame(driver.findElement(By.xpath("//frameset/frameset[2]/frame[@name='RTop']")));
-				select.selectByVisibleText("ABC Insurance");
+				select.selectByVisibleText("Life Insurance Corporation of India");
 			 }
 			 else{
 				 select.selectByIndex(1);
@@ -125,8 +125,8 @@ public class StepRunner {
 			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//table//input[@name='i1plan_name']")).sendKeys("PlanA");
 			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//table//input[@name='i1effective_date']")).sendKeys("2016/07/07");
 			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//table//input[@name='i1policy_number']")).sendKeys("ABC12345GFC");
-			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//input[@name='i1subscriber_fname']")).sendKeys("John");
-			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//input[@name='i1subscriber_lname']")).sendKeys("Smith");
+			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//input[@name='i1subscriber_fname']")).sendKeys("Sruthi");
+			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//input[@name='i1subscriber_lname']")).sendKeys("Sreejith");
 			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//input[@name='i1subscriber_DOB']")).sendKeys("1985/05/05");
 			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//table//input[@name='i1subscriber_employer_street']")).sendKeys("BackStreet");
 		}
