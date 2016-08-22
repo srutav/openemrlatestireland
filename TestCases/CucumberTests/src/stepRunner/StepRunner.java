@@ -68,8 +68,8 @@ public class StepRunner {
 		driver.switchTo().frame(driver.findElement(By.xpath("//frameset/frameset[2]/frame[@name='RTop']")));
 		Select select=new Select(driver.findElement(By.xpath("//form/table//td[2]//select")));
 		select.selectByVisibleText("Mr.");
-		driver.findElement(By.xpath("//form/table//td[2]//input[@name='form_fname']")).sendKeys("John");
-		driver.findElement(By.xpath("//form/table//td[2]//input[@name='form_lname']")).sendKeys("Smith");
+		driver.findElement(By.xpath("//form/table//td[2]//input[@name='form_fname']")).sendKeys("Sruthi");
+		driver.findElement(By.xpath("//form/table//td[2]//input[@name='form_lname']")).sendKeys("Sreejith");
 		//driver.findElement(By.xpath("//table//table//[td1]/input[@name='form_fname']")).sendKeys("Joey");
 		select=new Select(driver.findElement(By.xpath(".//*[@id='form_sex']")));
 		select.selectByVisibleText("Male");
@@ -113,7 +113,7 @@ public class StepRunner {
 				
 				driver.findElement(By.xpath("//form//table//input[@name='form_zip']")).sendKeys("40503");
 				driver.findElement(By.xpath("//form//input[@name='form_save']")).click();
-				System.out.println("ABC Insurance is added");
+				System.out.println("Life Insurance Corporation of India is added");
 				driver.switchTo().defaultContent();
 				driver.switchTo().frame(driver.findElement(By.xpath("//frameset/frameset[2]/frame[@name='RTop']")));
 				select.selectByVisibleText("Life Insurance Corporation of India");
