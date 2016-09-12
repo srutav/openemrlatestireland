@@ -26,17 +26,10 @@ public class StepRunner {
 	@Given("^browser is launched proper and login is done$")
 	public void browser_is_launched_proper_and_login_is_done() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		try{
-		BufferedReader br=new BufferedReader(new FileReader("/tmp/elb-dns.txt"));
-		String url=br.readLine();
 		driver=new FirefoxDriver();
-		driver.get(url);
+		driver.get("http://firsttest.pzqtn7hcgf.us-west-2.elasticbeanstalk.com/interface/login/login_frame.php?site=default");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-		}
-		catch(Exception e){
-			
-		}
 		String title=driver.getTitle();
 		Assert.assertEquals(title, "Login");
 		WebElement mainFrame=driver.findElement(By.xpath("//frameset/frame[3]"));
@@ -75,8 +68,8 @@ public class StepRunner {
 		driver.switchTo().frame(driver.findElement(By.xpath("//frameset/frameset[2]/frame[@name='RTop']")));
 		Select select=new Select(driver.findElement(By.xpath("//form/table//td[2]//select")));
 		select.selectByVisibleText("Mr.");
-		driver.findElement(By.xpath("//form/table//td[2]//input[@name='form_fname']")).sendKeys("Sruthi");
-		driver.findElement(By.xpath("//form/table//td[2]//input[@name='form_lname']")).sendKeys("Sreejith");
+		driver.findElement(By.xpath("//form/table//td[2]//input[@name='form_fname']")).sendKeys("John");
+		driver.findElement(By.xpath("//form/table//td[2]//input[@name='form_lname']")).sendKeys("Smith");
 		//driver.findElement(By.xpath("//table//table//[td1]/input[@name='form_fname']")).sendKeys("Joey");
 		select=new Select(driver.findElement(By.xpath(".//*[@id='form_sex']")));
 		select.selectByVisibleText("Male");
@@ -108,22 +101,22 @@ public class StepRunner {
 				 WebElement fancyFrame=driver.findElement(By.xpath("//div[@id='fancy_outer']//iframe[@id='fancy_frame']"));
 				 driver.switchTo().frame(fancyFrame);
 				 System.out.println("Frame Switched");
-				driver.findElement(By.xpath("//form//table//input[@name='form_name']")).sendKeys("Life Insurance Corporation of India");
+				driver.findElement(By.xpath("//form//table//input[@name='form_name']")).sendKeys("ABC Insurance");
 				
 					
 					
-				driver.findElement(By.xpath("//form//table//input[@name='form_city']")).sendKeys("Bangalore");
-				driver.findElement(By.xpath("//form//table//input[@name='form_attn']")).sendKeys("LIC");
+				driver.findElement(By.xpath("//form//table//input[@name='form_city']")).sendKeys("Kentucky");
+				driver.findElement(By.xpath("//form//table//input[@name='form_attn']")).sendKeys("ABC");
 				driver.findElement(By.xpath("//form//table//input[@name='form_addr1']")).sendKeys("99th Street");
 				driver.findElement(By.xpath("//form//table//input[@name='form_addr2']")).sendKeys("Straight Road");
-				driver.findElement(By.xpath("//form//table//input[@name='form_state']")).sendKeys("India");
+				driver.findElement(By.xpath("//form//table//input[@name='form_state']")).sendKeys("UK");
 				
 				driver.findElement(By.xpath("//form//table//input[@name='form_zip']")).sendKeys("40503");
 				driver.findElement(By.xpath("//form//input[@name='form_save']")).click();
-				System.out.println("Life Insurance Corporation of India is added");
+				System.out.println("ABC Insurance is added");
 				driver.switchTo().defaultContent();
 				driver.switchTo().frame(driver.findElement(By.xpath("//frameset/frameset[2]/frame[@name='RTop']")));
-				select.selectByVisibleText("Life Insurance Corporation of India");
+				select.selectByVisibleText("ABC Insurance");
 			 }
 			 else{
 				 select.selectByIndex(1);
@@ -132,8 +125,8 @@ public class StepRunner {
 			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//table//input[@name='i1plan_name']")).sendKeys("PlanA");
 			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//table//input[@name='i1effective_date']")).sendKeys("2016/07/07");
 			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//table//input[@name='i1policy_number']")).sendKeys("ABC12345GFC");
-			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//input[@name='i1subscriber_fname']")).sendKeys("Sruthi");
-			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//input[@name='i1subscriber_lname']")).sendKeys("Sreejith");
+			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//input[@name='i1subscriber_fname']")).sendKeys("John");
+			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//input[@name='i1subscriber_lname']")).sendKeys("Smith");
 			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//input[@name='i1subscriber_DOB']")).sendKeys("1985/05/05");
 			driver.findElement(By.xpath("//form/table//div[@id='div_ins']/table//table//input[@name='i1subscriber_employer_street']")).sendKeys("BackStreet");
 		}
