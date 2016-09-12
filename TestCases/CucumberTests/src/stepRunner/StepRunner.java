@@ -27,7 +27,7 @@ public class StepRunner {
 	public void browser_is_launched_proper_and_login_is_done() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		driver=new FirefoxDriver();
-		driver.get("http://firsttest.pzqtn7hcgf.us-west-2.elasticbeanstalk.com/interface/login/login_frame.php?site=default");
+		driver.get("http://firsttest.ajerikshmp.us-west-2.elasticbeanstalk.com/interface/login/login_frame.php?site=default");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		String title=driver.getTitle();
