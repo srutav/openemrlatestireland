@@ -26,10 +26,17 @@ public class StepRunner {
 	@Given("^browser is launched proper and login is done$")
 	public void browser_is_launched_proper_and_login_is_done() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
+		try{
+		BufferedReader br=new BufferedReader(new FileReader("/tmp/elb-dns.txt"));
+		String url=br.readLine();
 		driver=new FirefoxDriver();
-		driver.get("http://firsttest.ajerikshmp.us-west-2.elasticbeanstalk.com/interface/login/login_frame.php?site=default");
+		driver.get(url);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		}
+		catch(Exception e){
+			
+		}
 		String title=driver.getTitle();
 		Assert.assertEquals(title, "Login");
 		WebElement mainFrame=driver.findElement(By.xpath("//frameset/frame[3]"));
