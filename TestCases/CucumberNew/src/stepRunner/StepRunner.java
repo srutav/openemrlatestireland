@@ -53,7 +53,7 @@ public class StepRunner {
 		if(title.equals("Login")){
 			
 			System.out.println("We have entered wrong credentials");
-			Assert.fail("Build failed:Wrong credentails");
+			assert.fail("Build failed:Wrong credentails");
 		}
 	}
 }
