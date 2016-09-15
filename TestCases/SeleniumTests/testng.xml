@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="OpenEMR">
-<parameter name="url" value="http://firsttest.ajerikshmp.us-west-2.elasticbeanstalk.com/interface/login/login_frame.php?site=default"></parameter>
+<parameter name="url" value="http://secondtest.3txuyeisg4.us-west-2.elasticbeanstalk.com/"></parameter>
 
   <test name="DemoTests">
   
