@@ -42,7 +42,7 @@ public class StepRunner {
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame(mainFrame);
 		driver.findElement(By.xpath("//form[@name='login_form']/table//div[@class='login-box']//div[@class='table-right']/table//input[@name='authUser']")).sendKeys("admin");
-		driver.findElement(By.xpath("//form[@name='login_form']/table//div[@class='login-box']//div[@class='table-right']/table//input[@name='clearPass']")).sendKeys("admin1234");
+		driver.findElement(By.xpath("//form[@name='login_form']/table//div[@class='login-box']//div[@class='table-right']/table//input[@name='clearPass']")).sendKeys("admin123");
 		driver.findElement(By.xpath("//form[@name='login_form']/table//div[@class='login-box']//div[@class='table-right']/table//input[@value='Login']")).click();
 		// Write code here that turns the phrase above into concrete actions
 		//throw new PendingException();
