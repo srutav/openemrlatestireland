@@ -5,11 +5,14 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.concurrent.TimeUnit;
 
+import junit.framework.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
+
+
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -39,7 +42,7 @@ public class StepRunner {
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame(mainFrame);
 		driver.findElement(By.xpath("//form[@name='login_form']/table//div[@class='login-box']//div[@class='table-right']/table//input[@name='authUser']")).sendKeys("admin");
-		driver.findElement(By.xpath("//form[@name='login_form']/table//div[@class='login-box']//div[@class='table-right']/table//input[@name='clearPass']")).sendKeys("admin123");
+		driver.findElement(By.xpath("//form[@name='login_form']/table//div[@class='login-box']//div[@class='table-right']/table//input[@name='clearPass']")).sendKeys("admin1234");
 		driver.findElement(By.xpath("//form[@name='login_form']/table//div[@class='login-box']//div[@class='table-right']/table//input[@value='Login']")).click();
 		// Write code here that turns the phrase above into concrete actions
 		//throw new PendingException();
@@ -49,12 +52,17 @@ public class StepRunner {
 	public void we_get_error() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		//throw new PendingException();
-		String title=driver.getTitle();
-		if(title.equals("Login")){
-			
-			System.out.println("We have entered wrong credentials");
-			
-		
+		if(driver.getTitle().equals("Login")){
+		WebElement titleFrame=driver.findElement(By.xpath("//frameset/frame"));
+		//System.out.println(driver.getPageSource());
+		//driver.switchTo().defaultContent();
+
+		driver.switchTo().frame(titleFrame);
+		driver.findElement(By.xpath("//table//table//td/a[@class='css_button_small']")).click();
+	}
+		else{
+			System.out.println("Entered correct credentials.");
 		}
 	}
+	
 }
