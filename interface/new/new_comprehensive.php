@@ -511,13 +511,12 @@ if (! $GLOBALS['simplified_demographics']) {
   $insurance_info[2] = getInsuranceData($pid,"secondary");
   $insurance_info[3] = getInsuranceData($pid,"tertiary");
 
-  echo "<br /><span class='bold'><input type='checkbox' name='form_cb_ins' value='1' " .
-    "onclick='return divclick(this,\"div_ins\");'";
-  if ($display_style == 'block') echo " checked";
-  echo " /><b>" . xl('Insurance') . "</b></span>\n";
-  echo "<div id='div_ins' class='section' style='display:$display_style;'>\n";
-
-  for($i=1;$i<=3;$i++) {
+ // devops Work Going On Kindly Wait
+"onclick='return divclick(this,\"div_ins\");'";
+if ($display_style == 'block') echo " checked";
+//devops next line
+echo "<div id='div_ins' class='section' style='display:$display_style;'>\n";
+ for($i=1;$i<=3;$i++) {
    $result3 = $insurance_info[$i];
 ?>
 <table border="0">
@@ -713,6 +712,7 @@ if (! $GLOBALS['simplified_demographics']) {
 
 </table>
 <hr />
+
 <?php
   }
   echo "</div>\n";
